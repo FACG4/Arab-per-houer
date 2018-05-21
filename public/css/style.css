@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Changa", sans-serif;
+}
+h1,
+h2,
+.user--top {
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
+
+i {
+  cursor: pointer;
+}
+
+.pull--left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.btn {
+  display: block;
+  padding: 8px 30px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.user--top img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.user--top h2 {
+  position: absolute;
+  top: 20px;
+  left: 76px;
+}
+
+.user--top i {
+  position: absolute;
+  top: 12px;
+  left: 15%;
+}
+
+.user--top ul {
+    border: 1px solid;
+    width: 200px;
+    background: #32495e;
+    text-align: right;
+    position: absolute;
+    top: 81px;
+    left: 12px;
+    list-style: none;
+}
+
+.user--top ul li {
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.user--top ul li:hover{
+    background: #506170;
+}
+
+header {
+  height: 70vh;
+  background: linear-gradient(to right, #da573cda 50%, #33495eda 50%),
+    url("./../img/background.jpg");
+  color: #fff;
+}
+
+header i,
+header img {
+  margin: 20px;
+}
+
+header h1 {
+  position: absolute;
+  left: 45%;
+}
+
+header h1::after {
+  display: inline-block;
+  height: 4px;
+  width: 100px;
+  content: "";
+  background: #fefefe;
+  position: absolute;
+  left: 15%;
+  top: 40px;
+}
+.top--header-left {
+  display: inline-block;
+  position: absolute;
+  top: 30vh;
+  left: 15vw;
+}
+
+.top--header-left button {
+  color: #fff;
+  font-family: "Changa", sans-serif;
+}
+.top--header-rigth {
+  display: inline-block;
+  position: absolute;
+  top: 30vh;
+  right: 10vw;
+}
+
+.top--header-rigth button {
+  color: #fff;
+  font-family: "Changa", sans-serif;
+}
+.dark--blue {
+  background: #33495e;
+  position: absolute;
+  left: 10vh;
+}
+
+.dark--red {
+  background: #da573c;
+  position: absolute;
+  left: 10vh;
+}
+
+.menu {
+  width: 100%;
+  background: #f6373794;
+  height: 70vh;
+  position: absolute;
+  list-style: none;
+  z-index: 999;
+}
+
+.menu--close {
+    cursor: pointer;
+}
