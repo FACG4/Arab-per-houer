@@ -1,5 +1,5 @@
 const express = require("express");
-const favicon = require("serve-favicon");
+// const favicon = require("serve-favicon");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const controllers = require("./controllers");
@@ -13,7 +13,7 @@ app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static("public"));
-app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
+// app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
 app.use(controllers);
 
 app.engine(
