@@ -1,151 +1,223 @@
+/* eman login */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flex-container {
+display: flex;
+justify-content: space-between;
+/* flex-wrap: nowrap; */
+
+}
+.formStyle{
+padding: 10px;
+}
+.inputS{
+/* padding: 10px 10px; */
+border:1px solid rgb(104, 110, 124);
+border-radius: 5px;
+width: 99%;
+height: 30px;
+}
+.labelS {
+font-weight: bold;
+font-size: 15px;
+color:rgb(144, 142, 142);
+}
+.buttonS{
+width: 60%;
+height: 30px;
+background-color: rgb(184, 19, 19);
+color: white;
+font-weight: bold;
+font-size: 10px;
+border-radius: 5px;
+}
+
+/* abd home */
 * {
-  margin: 0;
-  padding: 0;
+margin: 0;
+padding: 0;
 }
 
 body {
-  font-family: "Changa", sans-serif;
+font-family: "Changa", sans-serif;
 }
 h1,
 h2,
 .user--top {
-  display: inline-block;
+display: inline-block;
 }
 .hidden {
-  display: none;
+display: none;
 }
 
 i {
-  cursor: pointer;
+cursor: pointer;
 }
 
 .pull--left {
-  float: left;
+float: left;
 }
 
 .pull-right {
-  float: right;
+float: right;
 }
 
 .clear {
-  clear: both;
+clear: both;
 }
 
 .btn {
-  display: block;
-  padding: 8px 30px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
+display: block;
+padding: 8px 30px;
+border-radius: 4px;
+border: none;
+cursor: pointer;
 }
 
 .user--top img {
-  width: 50px;
-  border-radius: 50%;
+width: 50px;
+border-radius: 50%;
 }
 
 .user--top h2 {
-  position: absolute;
-  top: 20px;
-  left: 76px;
+position: absolute;
+top: 20px;
+left: 76px;
 }
 
 .user--top i {
-  position: absolute;
-  top: 12px;
-  left: 15%;
+position: absolute;
+top: 12px;
+left: 15%;
 }
 
 .user--top ul {
-    border: 1px solid;
-    width: 200px;
-    background: #32495e;
-    text-align: right;
-    position: absolute;
-    top: 81px;
-    left: 12px;
-    list-style: none;
+  border: 1px solid;
+  width: 200px;
+  background: #32495e;
+  text-align: right;
+  position: absolute;
+  top: 81px;
+  left: 12px;
+  list-style: none;
 }
 
 .user--top ul li {
-    padding: 5px 20px;
-    cursor: pointer;
+  padding: 5px 20px;
+  cursor: pointer;
 }
 
 .user--top ul li:hover{
-    background: #506170;
+  background: #506170;
 }
 
 header {
-  height: 70vh;
-  background: linear-gradient(to right, #da573cda 50%, #33495eda 50%),
-    url("./../img/background.jpg");
-  color: #fff;
+height: 70vh;
+background: linear-gradient(to right, #da573cda 50%, #33495eda 50%),
+  url("./../img/background.jpg");
+color: #fff;
 }
 
 header i,
 header img {
-  margin: 20px;
+margin: 20px;
 }
 
 header h1 {
-  position: absolute;
-  left: 45%;
+position: absolute;
+left: 45%;
 }
 
 header h1::after {
-  display: inline-block;
-  height: 4px;
-  width: 100px;
-  content: "";
-  background: #fefefe;
-  position: absolute;
-  left: 15%;
-  top: 40px;
+display: inline-block;
+height: 4px;
+width: 100px;
+content: "";
+background: #fefefe;
+position: absolute;
+left: 15%;
+top: 40px;
 }
 .top--header-left {
-  display: inline-block;
-  position: absolute;
-  top: 30vh;
-  left: 15vw;
+display: inline-block;
+position: absolute;
+top: 30vh;
+left: 15vw;
 }
 
 .top--header-left button {
-  color: #fff;
-  font-family: "Changa", sans-serif;
+color: #fff;
+font-family: "Changa", sans-serif;
 }
 .top--header-rigth {
-  display: inline-block;
-  position: absolute;
-  top: 30vh;
-  right: 10vw;
+display: inline-block;
+position: absolute;
+top: 30vh;
+right: 10vw;
 }
 
 .top--header-rigth button {
-  color: #fff;
-  font-family: "Changa", sans-serif;
+color: #fff;
+font-family: "Changa", sans-serif;
 }
 .dark--blue {
-  background: #33495e;
-  position: absolute;
-  left: 10vh;
+background: #33495e;
+position: absolute;
+left: 10vh;
 }
 
 .dark--red {
-  background: #da573c;
-  position: absolute;
-  left: 10vh;
+background: #da573c;
+position: absolute;
+left: 10vh;
 }
 
 .menu {
-  width: 100%;
-  background: #f6373794;
-  height: 70vh;
-  position: absolute;
-  list-style: none;
-  z-index: 999;
+width: 100%;
+background: #f6373794;
+height: 70vh;
+position: absolute;
+list-style: none;
+z-index: 999;
 }
 
 .menu--close {
-    cursor: pointer;
+  cursor: pointer;
 }
+/* end abd home  */
