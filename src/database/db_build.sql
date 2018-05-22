@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS users, projects, files, roles, projectType CASCADE;
 CREATE TABLE roles(
   id SERIAL PRIMARY KEY,
   type_role VARCHAR(50) NOT NULL
-  
+
 );
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE users(
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   role_id INTEGER REFERENCES roles(id)
- 
+
 );
 
 CREATE TABLE projectType(
@@ -43,7 +43,3 @@ CREATE TABLE  files(
 -- INSERT INTO users (user_name,password,email,first_name,last_name,role_id)
 -- VALUES
 --   ('eman', '123', 'e@l.com', 'eman','kaled',0);
-
-
-
-
