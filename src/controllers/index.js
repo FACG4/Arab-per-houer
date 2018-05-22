@@ -13,4 +13,11 @@ router.post('/signup', signup.post);
 
 
 
-module.exports = router;
+
+const expressValidator = require('express-validator');
+router.use(expressValidator())
+const signup = require('./signup');
+router.get('/signup',signup.get);
+router.post('/signup',signup.post);
+
+module.exports= router;
