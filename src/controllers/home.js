@@ -1,9 +1,39 @@
+
+const bcrypt = require('bcrypt');
+const   getUser = require('./../database/queries/get_login');
+const { sign, verify } = require('jsonwebtoken');
+const SECRET = 'poiugyfguhijokpkoihugyfyguhijo';
+
+
 exports.get = (req, res) => {
   res.render('home');
 };
+
+
+
 exports.post = (req, res)=> {
-  console.log("dd",req.body.name);
-
-
+  const name = req.body.name;
+  const pass = req.body.pass;
+ 
+  getUser(name , (err, data) => {
+    
+    if (data.length === 0) {
+      res.send('invalid username');
+    } else {
+      bcrypt.compare(pass, data[0].password, (err, response) => {
+        if(err){
+      
+        }
+        if (!response) {
+          res.send('invalid password or user name');  
+        } else {
+          const userDetails = { userId: data[0].id,userName:data[0].user_name };
+          const cookie = sign(userDetails, SECRET);
+          res.setHeader('Set-Cookie', `jwt=${cookie}; HttpOnly`);
+          res.send('congratulation u being one of our family');
+        }
+      });
+    }
+  });
 
 };

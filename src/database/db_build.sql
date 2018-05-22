@@ -1,18 +1,18 @@
 
 DROP TABLE IF EXISTS users, projects, files, roles, projectType CASCADE;
-CREATE TABLE roles(
-  id SERIAL PRIMARY KEY,
-  type_role VARCHAR(50) NOT NULL
+-- CREATE TABLE roles(
+--   id SERIAL PRIMARY KEY,
+--   type_role VARCHAR(150) NOT NULL
 
-);
+-- );
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
-  user_name VARCHAR UNIQUE NOT NULL,
-  password VARCHAR NOT NULL,
-  email VARCHAR(30) UNIQUE NOT NULL,
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
-  role_id INTEGER REFERENCES roles(id)
+  user_name VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  email VARCHAR(200) UNIQUE NOT NULL,
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL
+  -- role_id INTEGER REFERENCES roles(id)
 
 );
 
@@ -24,6 +24,7 @@ CREATE TABLE projectType(
 CREATE TABLE projects(
   id SERIAL PRIMARY KEY,
   title VARCHAR(50) NOT NULL,
+  user_id INT NOT NULL REFERENCES users(id),
   description VARCHAR(100) NOT NULL,
   price VARCHAR(50) NOT NULL,
   type_project INT NOT NULL,
@@ -40,6 +41,10 @@ CREATE TABLE  files(
 );
 
 
--- INSERT INTO users (user_name,password,email,first_name,last_name,role_id)
--- VALUES
---   ('eman', '123', 'e@l.com', 'eman','kaled',0);
+INSERT INTO users (user_name,password,email,first_name,last_name)
+VALUES
+  ('eman', '123', 'e@l.com', 'eman','kaled');
+
+-- INSERT INTO roles (type_role)VALUES
+-- ('admin'),
+-- ('user');

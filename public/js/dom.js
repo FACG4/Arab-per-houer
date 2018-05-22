@@ -22,6 +22,7 @@ select('.user--top-close').addEventListener('click',()=>{
    var modal = select('#myModal');
    var btn = select('#myBtn');
    var span = select('.close');
+   var msg= select('.msg');
 
    btn.onclick = function() {
        modal.style.display = "block";
@@ -35,20 +36,18 @@ select('.user--top-close').addEventListener('click',()=>{
            modal.style.display = "none";
        }
    }
-  //  const form= select(".formStyle");
+  
    const btnn= select(".buttonS");
-
    btnn.addEventListener("click", function(){
    const name = select("#name").value;
    const password = select("#password").value;
-   console.log(name,"f");
-   console.log(password,"pass");
-  //  fetch('/','POST' ,name,function(res){
-  //    console.log("send",res);
-     
-  //  })
+  
    fetch('/','POST' ,name, password, function(res){
-     console.log("send");
+     msg.textContent=res;
+     if(res === "success"){
+     window.location.pathname='/';
+    }
+     
     
    });
   });
