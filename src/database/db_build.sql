@@ -40,6 +40,6 @@ CREATE TABLE  files(
 );
 
 
--- INSERT INTO users (user_name,password,email,first_name,last_name,role_id)
--- VALUES
---   ('eman', '123', 'e@l.com', 'eman','kaled',0);
+INSERT INTO users (user_name,password,email,first_name,last_name,role_id)
+VALUES
+  ('eman', '123', 'e@l.com', 'eman','kaled',0);

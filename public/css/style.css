@@ -348,3 +348,10 @@ footer span i {
   color: #fff;
   font-size: 3em;
 }
+
+/* sing model */
+
+.sing {
+  background: #2d3f526c;
+  height: 100vh;
+}
