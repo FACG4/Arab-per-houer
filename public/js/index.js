@@ -1,19 +1,15 @@
-const select = function(selector){
-  return document.querySelector(selector);
+
+function fetch(url,method ,name, pass, callback){
+  var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+  if(xhr.readyState === 4 && xhr.status === 200){
+    var response = xhr.responseText;
+    callback(response);
+  }
 }
 
-   var modal = select('#myModal');
-   var btn = select('#myBtn');
-   var span = select('.close');
-   btn.onclick = function() {
-       modal.style.display = "block";
-   }
-   
-   span.onclick = function() {
-       modal.style.display = "none";
-   }
-   window.onclick = function(event) {
-       if (event.target == modal) {
-           modal.style.display = "none";
-       }
-   }
+var data= JSON.stringify({name,pass})
+xhr.open(method, url);
+xhr.setRequestHeader('content-type', 'application/json')
+xhr.send(data);
+}
