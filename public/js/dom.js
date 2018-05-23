@@ -18,6 +18,13 @@ select('.user--top-close').addEventListener('click',()=>{
     select('.user--top-menu').classList.toggle('hidden');
 })
 
+select('.btn--bid').addEventListener('click',()=>{
+    select('.project--details-pop').classList.toggle('hidden');
+})
+
+select('#close-btn-project').addEventListener('click',()=>{
+    select('.project--details-pop').classList.toggle('hidden');
+})
 
    var modal = select('#myModal');
    var btn = select('#myBtn');
