@@ -137,6 +137,7 @@ left: 15%;
 }
 
 .user--top ul {
+  z-index: 9999;
   border: 1px solid;
   width: 200px;
   background: #32495e;
