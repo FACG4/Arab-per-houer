@@ -51,6 +51,7 @@ select('#close-btn-project').addEventListener('click',()=>{
   
    fetch('/','POST' ,name, password, function(res){
      msg.textContent=res;
+      console.log("ee")
      if(res === "success"){
      window.location.pathname='/';
     }
@@ -59,6 +60,9 @@ select('#close-btn-project').addEventListener('click',()=>{
    });
   });
 
-
-   
-   
+  fetch2('/project/1','GET' ,function(res){
+    console.log("kkk");
+    
+    console.log("dom res",res);
+    
+  })
