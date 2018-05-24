@@ -51,6 +51,7 @@ select('#close-btn-project').addEventListener('click',()=>{
 
    fetch('/','POST' ,name, password, function(res){
      msg.textContent=res;
+      console.log("ee")
      if(res === "success"){
      window.location.pathname='/';
     }

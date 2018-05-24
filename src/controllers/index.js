@@ -7,7 +7,7 @@ const signup = require("./signup");
 router.get("/", home.get);
 router.post("/", home.post);
 
-router.get("/insert", insertProject.get);
+router.get("/insertproject", insertProject.get);
 router.post("/insertproject", insertProject.post);
 
 router.get("/signup", signup.get);

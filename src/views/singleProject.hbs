@@ -1,0 +1,69 @@
+
+  <link rel="stylesheet" href="/css/project.css"> 
+  <div class="project--page-details">
+            <div class="project--header">
+                <span class="pull--right">{{this.result.title}}</span>
+                <span class="pull--right">{{this.result.first_name}}  {{this.result.last_name}} </span>
+                <span class="pull--right">{{this.result.time}}</span>
+                <span class="pull--right">{{this.result.price}}</span>
+                <span class="pull--right"><button class="btn pull--left inline--block bid--btn">قدم عرض</button></span>
+            </div>
+            <div class="project--card">
+                <div class="project--description">
+                    <h3 class="text--right">تفاصيل المشروع </h3>
+                    <p class="text--right">
+                       {{this.result.description}}
+                    </p>
+    
+                </div>
+                <div class="project--sidebar">
+                    <div class="project--skills ">
+                        <h3 class="text--right">المهارات المطلوبة</h3>
+                        <span>HTML</span>
+                        <span>PHP</span>
+                        <span>Mysql</span>
+                        <span>wordpress</span>
+                        <span>Paypal</span>
+
+                    </div>
+                    <div class="project--category">
+                        <h3 class="text--right">التصنيفات </h3>
+                        <span class="text--right">برمجة وتصميم</span>
+
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            
+        </div>
+        <div class="project--offers">
+            <form action="" method="post">
+                <div class="form--group">
+                    <label for="period">ساعات العمل</label>
+                    <div class="input--group">
+                        <input type="number" id="period"> 
+                        <span>ساعات</span>
+                    </div>
+                </div>
+                <div class="form--group">
+                    <label for="hours-price">سعر الساعة</label>
+                    <div class="input--group">
+                        <input type="number" id="hours-price"> 
+                        <span>$</span>
+                    </div>
+                </div>
+                <div class="form--group">
+                    <label for="">تفاصيل العرض</label>
+                    <div class="input--group">
+                        <textarea name="" id=""></textarea> 
+                    </div>
+                </div>
+                <div class="form--group">
+                    <div class="input--group">
+                        <button class="btn">أضف عرضك</button>
+                    </div>
+                </div>
+            </form>    
+        </div>
+

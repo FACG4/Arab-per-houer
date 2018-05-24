@@ -1,7 +1,6 @@
 const db = require("./../db_connect");
 
 const insertProject = (title, userId, description, price, type_project, cb) => {
-  // const { title, userId, description, price, type_project } = data;
   const sql = {
     text:
       "INSERT INTO projects (title, user_id, description, price, type_project) VALUES ($1,$2, $3, $4, $5)",

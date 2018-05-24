@@ -1,3 +1,4 @@
 node_modules
-config.env
 theam
+config.env
+.eslinttrc.json
