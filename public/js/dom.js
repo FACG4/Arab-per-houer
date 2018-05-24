@@ -27,7 +27,7 @@ select('.user--top-close').addEventListener('click',()=>{
    btn.onclick = function() {
        modal.style.display = "block";
    }
-   
+
    span.onclick = function() {
        modal.style.display = "none";
    }
@@ -36,22 +36,18 @@ select('.user--top-close').addEventListener('click',()=>{
            modal.style.display = "none";
        }
    }
-  
+
    const btnn= select(".buttonS");
    btnn.addEventListener("click", function(){
    const name = select("#name").value;
    const password = select("#password").value;
-  
+
    fetch('/','POST' ,name, password, function(res){
      msg.textContent=res;
      if(res === "success"){
      window.location.pathname='/';
     }
-     
-    
+
+
    });
   });
-
-
-   
-   
