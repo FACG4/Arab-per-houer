@@ -12,13 +12,14 @@ exports.post = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const password2 = req.body.password2;
-
+  const type = req.body.typ;
+  
   bcrypt.hash(password, 10, (err, hash) => {
  
     
     if (err) throw new Error(err, 'hashing password signup');
     else {
-      signupInsert(username, hash, email, firstName, lastName, (error, result) => {
+      signupInsert(username, hash, email, firstName, lastName, type,(error, result) => {
         res.redirect('/');
       })
     }

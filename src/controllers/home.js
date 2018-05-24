@@ -1,12 +1,18 @@
 
 const bcrypt = require('bcrypt');
 const   getUser = require('./../database/queries/get_login');
+const selectAllProject = require('./../database/queries/selectAllproject');
 const { sign, verify } = require('jsonwebtoken');
 const SECRET = 'poiugyfguhijokpkoihugyfyguhijo';
 
 
 exports.get = (req, res) => {
-  res.render('home');
+  selectAllProject((err,result)=>{
+  if(err) console.log(err);
+  else {
+    res.render('home', { result: result.rows });
+  }
+})
 };
 
 

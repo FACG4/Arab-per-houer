@@ -47,26 +47,38 @@
         </div>
         <div class="top--header-rigth">
             <h2>هل تبحث عن عمل ؟ أخبرنا قصتك</h2>
-            <button class="btn dark--red">سجل حساب</button>
+            <button class="btn dark--red" id="sign-pop">سجل حساب</button>
         </div>
     </header>
     <main>
-        <section class="model--pop-sign">
-                <span class="close">&times;</span>
+        <section class="model--pop-sign hidden">
+            <i class="fas fa-times-circle" id="close-sign-pop"></i>
             <div class="login pull--right">
     
                     <h2 class="text--right">تسجيل الدخول</h2>
                   
-                     <label class="text--right">اسم المستخدم أو بريدك الالكتروني</label><br>
-                     <input type="text" id="name" name="username" class="pull--right" id="name" ><br>
-                     <label class="text--right">كلمة المرور</label><br>
-                     <input type="text" id="password" name="password" class="pull--right" id="password"><br>
+                     <label class="text--right">اسم المستخدم أو بريدك الالكتروني</label> 
+                     <input type="text" id="name" name="username" class="pull--right" id="name" > 
+                     <label class="text--right">كلمة المرور</label> 
+                     <input type="text" id="password" name="password" class="pull--right" id="password"> 
                      <button class="btn pull--right">تسجيل الدخول</button>
             </div>
-            <div class="signup pull--left">
+            <div class="signup pull--right">
     
                     <h2 class="text--right">إنشاء حساب</h2>
-                  
+                    <label class="text--right" for="first-name">الاسم اﻷول</label> 
+                    <input type="text" id="first-name" name="first-name" class="pull--right" id="first-name" > 
+                    <label class="text--right" for="last-name">اسم العائلة</label> 
+                    <input type="text" id="last-name" name="last-name" class="pull--right" id="last-name" > 
+                    <label class="text--right" for="username">اسم المستخدم</label> 
+                    <input type="text" id="username" name="username" class="pull--right" id="username" > 
+                    <label class="text--right" for="email">بريدك الالكتروني</label> 
+                    <input type="email" id="email" name="email" class="pull--right" id="email" > 
+                    <label class="text--right">كلمة المرور</label> 
+                    <input type="password" id="password" name="password" class="pull--right" id="password"> 
+                    <label class="text--right" for="re-password">تأكيد كلمة المرور</label> 
+                    <input type="password" id="password" name="re-password" class="pull--right" id="re-password"> 
+                    <button class="btn pull--right"> إنشاء حساب</button>
                      
             </div>
         </section>
