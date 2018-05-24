@@ -1,0 +1,12 @@
+<h1>ادراج مشروع جديد</h1>
+<form class="insert-post" action="/insertproject" method="POST">
+<label for="">عنوان المشروع </label><input type="text" name="title">
+<label for="">محتوى المشروع </label><textarea name="description" rows="8" cols="80"></textarea>
+<label for="">السعر</label><input name="price" rows="8" cols="80"></input>
+<label for="">user-id</label><input name="userId" rows="8" cols="80"></input>
+<label for="">نوع العرض</label>
+  <input type="radio" name="type_project" value="1"> بالساعة<br>
+  <input type="radio" name="type_project" value="2"> ككل<br>
+
+<input type="submit" value="ارسال" />
+</form>

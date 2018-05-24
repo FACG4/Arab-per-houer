@@ -1,20 +1,18 @@
-const db_connection = require('../db_connection');
+const db = require("./../db_connect");
 
-const insertProjects = (Title,description,price,typeProjects , cb) => {
-
-  let sql = {
-    text: 'INSERT INTO Projects (title,description,price,typeProjects)' ,
-    values: [title , description,price,typeProjects]
+const insertProject = (title, userId, description, price, type_project, cb) => {
+  const sql = {
+    text:
+      "INSERT INTO projects (title, user_id, description, price, type_project) VALUES ($1,$2, $3, $4, $5)",
+    values: [title, userId, description, price, type_project]
   };
-  db_connection.query(sql, (err, res) => {
 
-    if (err) {
-      return cb(err);
-    } else {
-      cb(null, res)
-    }
+  db.query(sql, (err, result) => {
+    if (err) return cb(err);
+    return cb(null, result);
   });
-
 };
 
-module.exports = insertGoodsToUser ;
+module.exports = {
+  insertProject
+};
