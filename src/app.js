@@ -1,5 +1,5 @@
 const express = require("express");
-// const favicon = require("serve-favicon");
+const favicon = require("serve-favicon");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const controllers = require("./controllers");
