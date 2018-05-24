@@ -12,12 +12,8 @@ exports.post = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const password2 = req.body.password2;
-  console.log("d",req.body);
   const type = req.body.typ;
-  console.log("hhhhhh",type);
   
-  
-
   bcrypt.hash(password, 10, (err, hash) => {
  
     

@@ -6,13 +6,13 @@ select('#menu').addEventListener('click',()=>{
     select('.menu').classList.toggle('hidden');
 })
 
-select('.menu--close').addEventListener('click',()=>{
-    select('.menu').classList.toggle('hidden');
-})
+select(".menu--close").addEventListener("click", () => {
+  select(".menu").classList.toggle("hidden");
+});
 
-select('#user--top-down').addEventListener('click',()=>{
-    select('.user--top-menu').classList.toggle('hidden');
-})
+select("#user--top-down").addEventListener("click", () => {
+  select(".user--top-menu").classList.toggle("hidden");
+});
 
 select('.user--top-close').addEventListener('click',()=>{
     select('.user--top-menu').classList.toggle('hidden');
@@ -34,7 +34,7 @@ select('#close-btn-project').addEventListener('click',()=>{
    btn.onclick = function() {
        modal.style.display = "block";
    }
-   
+
    span.onclick = function() {
        modal.style.display = "none";
    }
@@ -43,20 +43,19 @@ select('#close-btn-project').addEventListener('click',()=>{
            modal.style.display = "none";
        }
    }
-  
+
    const btnn= select(".buttonS");
    btnn.addEventListener("click", function(){
    const name = select("#name").value;
    const password = select("#password").value;
-  
+
    fetch('/','POST' ,name, password, function(res){
      msg.textContent=res;
       console.log("ee")
      if(res === "success"){
      window.location.pathname='/';
     }
-     
-    
+
+
    });
   });
-
