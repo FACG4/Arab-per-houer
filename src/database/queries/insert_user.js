@@ -6,7 +6,6 @@ const signupInsert = (username, hash, email, firstName, lastName,type, cb) => {
     values: [username, hash, email, firstName, lastName,type]
   };
   connection.query(sql, (err, res) => {
-    console.log('erroe', err);
     if (err) cb(err);
     else {
       cb(null, res);

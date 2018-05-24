@@ -49,6 +49,7 @@ INSERT INTO roles (type_role)VALUES
 INSERT INTO users (user_name,password,email,first_name,last_name,type_role)
 VALUES
  ('emann', '123', 'e@lll.com', 'emanh','kaled','1'),
+   ('ahmed', '123', 'e@lk.com', 'eman','kaled','1'),
   ('eman', '123', 'e@l.com', 'eman','kaled','1');
 
 
@@ -59,7 +60,9 @@ VALUES
   INSERT INTO projects(title,user_id,description,price,time,type_project)
   VALUES
     ('first','1', 'hiiiii ','10',now(),'1'),
-  ('first dd','2', 'halllo','10',now(),'1')
+  ('first dd','2', 'halllo','10',now(),'1'),
+   ('first dd','3', 'how','10',now(),'1')
+
  ;
 
 

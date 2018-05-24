@@ -45,7 +45,7 @@
                 <span class="pull--right">عبدالله أبودقة</span>
                 <span class="pull--right">20-5-2018</span>
                 <span class="pull--right">34$/ساعة</span>
-                <span class="pull--right"><button class="btn pull--left inline--block bid--btn">قدم عرض</button></span>
+                <span class="pull--right"><button class="btn pull--left inline--block bid--btn"><a href="#project--offers-bid">قدم عرض</a></button></span>
             </div>
             <div class="project--card">
                 <div class="project--description">
@@ -84,32 +84,32 @@
 
             </div>
             
-        </div>
-        <div class="project--offers">
-            <form action="" method="post">
-                <div class="form--group">
-                    <label for="period">ساعات العمل</label>
+        </div> 
+        <div class="project--offers ">
+            <form action="" method="post" id="project--offers-bid">
+                <div class="form--group pull--right">
+                    <label for="period" class="text--right">ساعات العمل</label>
                     <div class="input--group">
                         <input type="number" id="period"> 
-                        <span>ساعات</span>
+                        <span  class="pull--left">ساعات</span>
                     </div>
                 </div>
-                <div class="form--group">
-                    <label for="hours-price">سعر الساعة</label>
+                <div class="form--group pull--right">
+                    <label for="hours-price" class="text--right">سعر الساعة</label>
                     <div class="input--group">
                         <input type="number" id="hours-price"> 
-                        <span>$</span>
+                        <span  class="pull--left">$</span>
                     </div>
                 </div>
-                <div class="form--group">
-                    <label for="">تفاصيل العرض</label>
+                <div class="form--group full">
+                    <label for="" class="text--right">تفاصيل العرض</label>
                     <div class="input--group">
                         <textarea name="" id=""></textarea> 
                     </div>
                 </div>
-                <div class="form--group">
+                <div class="form--group full">
                     <div class="input--group">
-                        <button class="btn">أضف عرضك</button>
+                        <button class="btn pull--right dark--blue">أضف عرضك</button>
                     </div>
                 </div>
             </form>    

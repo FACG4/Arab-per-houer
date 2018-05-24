@@ -1,32 +1,18 @@
-{{!-- <h1>{{this.result.title}}</h1>
-<div><p>{{this.result.description}}</p>
-<h5>{{this.result.price}}</h5>
-</div> --}}
-  <link rel="stylesheet" href="/css/project.css">
 
- 
+  <link rel="stylesheet" href="/css/project.css"> 
   <div class="project--page-details">
             <div class="project--header">
-                <span class="pull--right">تطوير موقع ويب</span>
-                <span class="pull--right">عبدالله أبودقة</span>
-                <span class="pull--right">20-5-2018</span>
-                <span class="pull--right">34$/ساعة</span>
+                <span class="pull--right">{{this.result.title}}</span>
+                <span class="pull--right">{{this.result.first_name}}  {{this.result.last_name}} </span>
+                <span class="pull--right">{{this.result.time}}</span>
+                <span class="pull--right">{{this.result.price}}</span>
                 <span class="pull--right"><button class="btn pull--left inline--block bid--btn">قدم عرض</button></span>
             </div>
             <div class="project--card">
                 <div class="project--description">
                     <h3 class="text--right">تفاصيل المشروع </h3>
                     <p class="text--right">
-                        السلام عليكم
-    هو عبارة عن تقرير بصيغة Word يتم تعبأته على مدار الساعة من خلال 3 شفتات (ورديات) ، نحتاج الى تحويله الى برنامج اخر يسهل ارساله عن طريق الايميل وبشكل متناسق ... وبوجود آليه بحيث ان الثلاثة شفتات لا يمكنهم استخدام الا هذا النموذج فقط ليتم ربط جميع معلومات الشفتات الثلاثه مع بعض وتحديثها اول بأول اما بإضافة معلومات او حذفها من التقرير
-    
-    كذلك مطلوب في بعض الايقونات عند كتابة مثلا : كلمة (لا) .. لا يمكنه الانتقال للجزء الاخر من التقرير الا في حال : كتابته السبب لكلمة (لا)
-    
-    وكذلك قبل حفظ التقرير يظهر له نص ومثال ذلك (هل تم تحديث محتويات التقرير؟) وعليه بالضغط نعم وفي حال لا لا يتم حفظه.
-    
-    اتمنى يكون الوصف واضح
-    
-    تحياتي
+                       {{this.result.description}}
                     </p>
     
                 </div>

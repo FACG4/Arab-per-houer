@@ -46,6 +46,10 @@ main {
     font-family: "Changa", sans-serif;
 }
 
+.bid--btn a {
+    color: #fff;
+}
+
 .project--description {
     width: 70%;
     float: right;
@@ -70,4 +74,42 @@ main {
     background: #fefefe;
     margin: 30px auto;
     padding: 20px;
+}
+
+.form--group {
+    display: inline-block;
+    width: 48%;
+}
+
+.input--group {
+    position: relative;
+}
+
+.input--group input {
+    padding: 10px;
+    width: 90%;
+}
+
+.input--group span{
+    position: absolute;
+    left: 0;
+    background: #d7d5d5;
+    padding: 4px;
+    min-width: 25px;
+    text-align: center;
+    color: #a9a8a8;
+}
+
+.input--group textarea {
+    width: 95%;
+    margin: 0px 34px;
+    height: 170px;
+}
+
+.dark--blue {
+    background: #33495e;
+    position: relative;
+    left: 0;
+    color: #fff;
+    font-family: "Changa", sans-serif;
 }

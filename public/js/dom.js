@@ -60,9 +60,3 @@ select('#close-btn-project').addEventListener('click',()=>{
    });
   });
 
-  fetch2('/project/1','GET' ,function(res){
-    console.log("kkk");
-    
-    console.log("dom res",res);
-    
-  })
