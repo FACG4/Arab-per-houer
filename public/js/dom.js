@@ -1,6 +1,10 @@
-select("#menu").addEventListener("click", () => {
-  select(".menu").classList.toggle("hidden");
-});
+const select = function(selector){
+  return document.querySelector(selector);
+}
+
+select('#menu').addEventListener('click',()=>{
+    select('.menu').classList.toggle('hidden');
+})
 
 select(".menu--close").addEventListener("click", () => {
   select(".menu").classList.toggle("hidden");
@@ -10,38 +14,47 @@ select("#user--top-down").addEventListener("click", () => {
   select(".user--top-menu").classList.toggle("hidden");
 });
 
-select(".user--top-close").addEventListener("click", () => {
-  select(".user--top-menu").classList.toggle("hidden");
-});
+select('.user--top-close').addEventListener('click',()=>{
+    select('.user--top-menu').classList.toggle('hidden');
+})
 
-const select = function(selector) {
-  return document.querySelector(selector);
-};
+select('.btn--bid').addEventListener('click',()=>{
+    select('.project--details-pop').classList.toggle('hidden');
+})
 
-var modal = select("#myModal");
-var btn = select("#myBtn");
-var span = select(".close");
-btn.onclick = function() {
-  modal.style.display = "block";
-};
+select('#close-btn-project').addEventListener('click',()=>{
+    select('.project--details-pop').classList.toggle('hidden');
+})
 
-span.onclick = function() {
-  modal.style.display = "none";
-};
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+   var modal = select('#myModal');
+   var btn = select('#myBtn');
+   var span = select('.close');
+   var msg= select('.msg');
 
-const btnn = select(".buttonS");
+   btn.onclick = function() {
+       modal.style.display = "block";
+   }
 
-btnn.addEventListener("click", function() {
-  const name = select("#name").value;
-  const password = select("#password").value;
-  console.log(name, "f");
-  console.log(password, "pass");
-  fetch("/a", "POST", name, function(res) {
-    console.log("send");
+   span.onclick = function() {
+       modal.style.display = "none";
+   }
+   window.onclick = function(event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+   }
+
+   const btnn= select(".buttonS");
+   btnn.addEventListener("click", function(){
+   const name = select("#name").value;
+   const password = select("#password").value;
+
+   fetch('/','POST' ,name, password, function(res){
+     msg.textContent=res;
+     if(res === "success"){
+     window.location.pathname='/';
+    }
+
+
+   });
   });
-});
