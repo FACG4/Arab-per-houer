@@ -19,6 +19,7 @@ exports.post = (req, res) => {
           console.log("result: ", result);
           if (err) throw new Error("error in posting project");
           // if (err) console.log("Error: ", err);
+
           res.redirect("/");
         }
       );
