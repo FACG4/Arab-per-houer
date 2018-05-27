@@ -31,7 +31,11 @@ select('#close-btn-project').addEventListener('click',()=>{
     select('.project--details-pop').classList.toggle('hidden');
 })
 
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> c6d4e3ce1cb3c3c0611d0ddc4a1ea5384b020fa9
 
    fetch('/','POST' ,name, password, function(res){
      msg.textContent=res;
