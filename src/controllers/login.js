@@ -2,7 +2,7 @@ const getUser = require('./../database/queries/get_login');
 const { sign, verify } = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const secret = 'poiugyfguhijokpkoihugyfyguhijo';
+const secret = process.env.SECRET;
 
 exports.get = (req, res) => {
   res.render('login');
