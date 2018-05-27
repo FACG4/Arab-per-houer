@@ -3,6 +3,8 @@ const router = express.Router();
 const insertProject = require("./insertProject");
 const home = require("./home");
 const signup = require("./signup");
+const singleProject = require("./singleProject");
+// const sendMessage = require("./sendMessage");
 
 router.get("/", home.get);
 router.post("/", home.post);
@@ -12,6 +14,10 @@ router.post("/insertproject", insertProject.post);
 
 router.get("/signup", signup.get);
 router.post("/signup", signup.post);
+router.get("/project/:id", singleProject.get);
+router.post("/project/:id", singleProject.post);
+
+// router.get("/apply", sendMessage.get);
 
 const expressValidator = require("express-validator");
 router.use(expressValidator());
