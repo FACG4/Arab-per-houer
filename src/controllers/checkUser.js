@@ -1,6 +1,6 @@
 
 const jwt = require('jsonwebtoken');
-const cookie = require('cookie');
+// const cookie = require('cookie');
 require('env2')('./config.env');
 
 const secret = process.env.SECRET;
@@ -19,6 +19,7 @@ module.exports = (req, res, next) => {
       req.userId = decoded.userId;
       next();
     });
+  } else {
+    res.redirect('/login');
   }
-  res.send('error');
 };

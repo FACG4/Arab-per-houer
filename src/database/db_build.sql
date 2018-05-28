@@ -58,7 +58,6 @@ VALUES
 
 
 
-
   INSERT INTO projects(title,user_id,description,price,time,type_project)
   VALUES
     ('first','1', 'hiiiii ','10',now(),'1'),
@@ -67,7 +66,3 @@ VALUES
    ('first dd','3', 'how','10',now(),'1')
 
  ;
-
-
-
-
