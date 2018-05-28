@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const  signupInsert = require('./../database/queries/insert_user');
 
 exports.get = (req, res) => {
-  res.render('signup')
+  res.render('signup',{js:'index'})
 }
 exports.post = (req, res) => {
 
@@ -15,8 +15,8 @@ exports.post = (req, res) => {
   const type = req.body.typ;
   
   bcrypt.hash(password, 10, (err, hash) => {
- 
-    
+
+
     if (err) throw new Error(err, 'hashing password signup');
     else {
       signupInsert(username, hash, email, firstName, lastName, type,(error, result) => {
@@ -25,5 +25,3 @@ exports.post = (req, res) => {
     }
     })
   }
-
-    
