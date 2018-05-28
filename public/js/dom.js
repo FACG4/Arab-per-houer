@@ -1,11 +1,6 @@
-const select = function(selector){
+const select = function (selector) {
   return document.querySelector(selector);
-}
-select("#search").addEventListener("click", () => {
-  console.log(ffrd);
-
-});
-
+};
 
 const btnn = select('.buttonS');
 btnn.addEventListener('click', () => {
@@ -24,4 +19,3 @@ btnn.addEventListener('click', () => {
 });
 
 console.log('ggggggggggggggggggggggggggggggg');
-module.exports = fetch;
