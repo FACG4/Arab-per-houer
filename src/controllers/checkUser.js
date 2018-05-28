@@ -4,6 +4,7 @@ const cookie = require('cookie');
 require('env2')('./config.env');
 
 const secret = process.env.SECRET;
+console.log('first');
 
 
 module.exports = (req, res, next) => {
@@ -14,13 +15,10 @@ module.exports = (req, res, next) => {
         res.render('error');
         next();
       }
-
-      console.log('f', decoded);
-
       req.userName = decoded.userName;
       req.userId = decoded.userId;
-      req.loggedIn = true;
+      next();
     });
   }
-  next();
+  res.send('error');
 };

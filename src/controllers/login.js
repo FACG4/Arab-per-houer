@@ -25,11 +25,6 @@ exports.post = (req, res) => {
           res.send('invalid password or user name');
         } else {
           const userDetails = { userId: data[0].id, userName: data[0].user_name };
-          //  sign(userDetails, 'secret',(err,token)=>{
-          //    res.cookie('user_id', token, {
-          //      expires: new Date(Date.now() + 900000000000),
-          //      signed: true,
-          //     });
           const token = sign(userDetails, secret);
           res.cookie('user', token, { maxAge: 900000, httpOnly: true });
           res.send('success');

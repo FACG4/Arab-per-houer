@@ -14,6 +14,7 @@
 
 
  <main>
+ 
         <section class="projects">
             <h2 class="text--right"> مئات المشاريع متاحة لك </h2>
             <div class="projects--header">
@@ -21,11 +22,15 @@
                 <button class="btn lithg--blue pull--right">
                     <i class="fas fa-plus-circle"></i>أنشىء مشروع</button>
             </div>
+           
             {{#each result}}
             <div class="project">
                 <span class="pull--right">
-                    <img src="img/me.jpg" alt="">
+                    <a href="profile/{{this.user_id }}">
+                    <img src="img/me.jpg" alt="profile-img">
+                    </a>
                 </span>
+             
                 <span class="pull--right">{{this.title}}</span>
                 <span class="pull--right">{{this.user_name}}</span>
                 <span class="pull--right">{{this.time}}</span>
