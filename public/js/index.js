@@ -17,7 +17,7 @@ var formSubmit = document.querySelector('#formSubmit');
 
 function createErrorEventListener(element, errorCondition, errorIcon, errorMsg) {
   element.addEventListener('blur', function(event) {
-    console.log(element);
+    // console.log(element);
     var value = event.target.value;
     if (errorCondition(value)) {
       errorIcon.style.visibility = 'hidden';

@@ -43,16 +43,3 @@ exports.post = (req, res)=> {
   });
 
 };
-// app.post('/search',(req,res)=>{
-// const id = req.body.keyword;
-// projects.getall(keyword,(err,obj)=>{
-//   res.render(search, {
-//     // error: invalid id;
-//     console.log(error);
-//   })
-//   else {
-//     keyword.id = id;
-//     res.render ('inputs')
-//   }
-// })
-// })
