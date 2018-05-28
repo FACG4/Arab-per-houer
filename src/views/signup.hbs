@@ -1,57 +1,50 @@
 
-
-
-
 <form method="post" action="/signup">
+  <br>
   <div>
     <label>firstName</label>
-    <input type="text" name="firstName" placeholder="firstName"required>
+    <input type="text" name="firstName" id="firstName" placeholder="firstName"required>
+    <i class="fas fa-exclamation-circle" id='firstNameIcon'></i>
+
   </div>
   <div>
     <label>lastName</label>
-    <input type="text" name="lastName" placeholder="lastName"required>
+    <input type="text" name="lastName" id="lastName"  placeholder="lastName"required>
+        <i class="fas fa-exclamation-circle" id='lastNameIcon'></i>
+
   </div>
   <div>
     <label>Username</label>
-    <input type="text" name="username" placeholder="Username"required>
+    <input type="text" name="username"id= "username" placeholder="Username"required>
+      <i class="fas fa-exclamation-circle" id='userNameIcon'></i>
   </div>
   <div>
     <label>Email</label>
-    <input type="email" name="email" placeholder="Email"required>
+    <input type="text" name="email" id = "email"placeholder="Email"required>
+    <i class="fas fa-exclamation-circle" id='emailIcon'></i>
+
   </div>
   <div>
     <label>Password</label>
-    <input type="text" name="password" placeholder="Password"required>
+    <input type="text" name="password" id = "password"placeholder="Password"required>
+    <i class="fas fa-exclamation-circle" id='passwordIcon'></i>
+
   </div>
   <div>
     <label>Confirm Password</label>
-    <input type="text" name="password2" placeholder="Confirm Password"required>
+    <input type="text" name="password2"id = "password2" placeholder="Confirm Password"required>
+    <i class="fas fa-exclamation-circle" id='confirmPasswordIcon'></i>
+
   </div>
   <div>
- <input type="radio" name="type" value="1">claint<br>
+ <input type="radio" name="type" value="1">client<br>
   <input type="radio" name="type" value="2"> freelancer<br>
+  </div>
+  <div>
+    <label>position</label>
+    <input type="text" name="position" >
   </div>
   <button type="submit">Register</button>
   <br>
   Have An Account? <a href="/">Login Now</a>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
