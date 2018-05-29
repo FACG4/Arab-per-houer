@@ -43,26 +43,15 @@ INSERT INTO roles (type_role)VALUES
 ('cleint'),
 ('freelance');
 
-INSERT INTO users (user_name,password,email,first_name,last_name,type_role)
-VALUES
-('emann', '123', 'e@lll.com', 'emanh','kaled','1'),
-('ahmed', '123', 'e@lk.com', 'eman','kaled','1'),
-('eman', '123', 'e@l.com', 'eman','kaled','1');
-
 INSERT INTO projectType (type_project)
 VALUES
 ('hour'),('total');
 
 INSERT INTO users (user_name,password,email,first_name,last_name,type_role)
 VALUES
- ('emann', '123', 'e@lll.com', 'emanh','kaled','1'),
+ ('emann', '123', 'alshrq.com.sa@gmail.com', 'emanh','kaled','1'),
    ('ahmed', '123', 'e@lk.com', 'eman','kaled','1'),
   ('eman', '123', 'e@l.com', 'eman','kaled','1');
-
-
-  INSERT INTO projectType (type_project)
-  VALUES
-  ('hour'),('total');
 
   INSERT INTO projects(title,user_id,description,price,time,type_project)
   VALUES
@@ -71,7 +60,3 @@ VALUES
    ('first dd','3', 'how','10',now(),'1')
 
  ;
-
-
-
-
