@@ -1,6 +1,6 @@
-const nodemailer = require("nodemailer");
-const selectProject = require("./../database/queries/selectProject");
-const selectClient = require("./../database/queries/selectClient");
+const nodemailer = require('nodemailer');
+const selectProject = require('./../database/queries/selectProject');
+const selectClient = require('./../database/queries/selectClient');
 
 exports.get = (req, res) => {
   const { id } = req.params;
@@ -8,7 +8,7 @@ exports.get = (req, res) => {
   selectProject(id, (err, result) => {
     if (err) console.log(err);
     else {
-      res.render("singleProject", { result: result.rows[0] });
+      res.render('singleProject', { result: result.rows[0] });
     }
   });
 };
@@ -17,12 +17,12 @@ exports.post = (req, res) => {
   console.log(req.headers.host);
   const { id } = req.params;
   selectClient(id, (err, result) => {
-    console.log("results.rows", result.rows[0].email);
+    console.log('results.rows', result.rows[0].email);
     if (err) console.log(err);
     else {
       const projectUrl = `${req.headers.host}${req.originalUrl}`;
-      console.log("req.url", req.url);
-      console.log("req.headers.host", req.headers.host);
+      console.log('req.url', req.url);
+      console.log('req.headers.host', req.headers.host);
       console.log(projectUrl);
       const output = `
         <p>You Have new offer</p>
@@ -35,29 +35,29 @@ exports.post = (req, res) => {
         <h2>Message</h2>
       <p>${req.body.message}</p>
         `;
-      let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
         port: 587,
         secure: false,
         auth: {
-          user: "beinlive.co@gmail.com",
-          pass: "*20051469"
-        }
+          user: 'beinlive.co@gmail.com',
+          pass: '*20051469',
+        },
       });
-      let mailOptions = {
-        from: `"FreeLancer Website" <contact@freelancer.com>`,
+      const mailOptions = {
+        from: '"FreeLancer Website" <contact@freelancer.com>',
         to: result.rows[0].email,
-        subject: "You Have new offer",
-        text: "You Have new offer",
-        html: output
+        subject: 'You Have new offer',
+        text: 'You Have new offer',
+        html: output,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           return console.log(error);
         }
-        res.render("singleProject", {
-          msg: "شكراً لك على التواصل معنا .. سنرد عليك في أبعد فرصة"
+        res.render('singleProject', {
+          msg: 'شكراً لك على التواصل معنا .. سنرد عليك في أبعد فرصة',
         });
       });
     }

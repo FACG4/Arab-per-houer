@@ -12,9 +12,11 @@ email VARCHAR(200) UNIQUE NOT NULL,
 first_name VARCHAR(100) NOT NULL,
 last_name VARCHAR(100) NOT NULL,
 type_role INT NOT NULL,
+position VARCHAR(400) ,
 FOREIGN KEY (type_role) REFERENCES roles(id)
 
 );
+
 
 CREATE TABLE projectType(
 id SERIAL PRIMARY KEY,
@@ -43,19 +45,23 @@ INSERT INTO roles (type_role)VALUES
 ('cleint'),
 ('freelance');
 
+INSERT INTO users (user_name,password,email,first_name,last_name,type_role,position)
+VALUES
+('emann', '123', 'e@lll.com', 'emanh','kaled','1','front end devloper'),
+('ahmed', '123', 'e@lk.com', 'eman','kaled','1','react'),
+('eman', '123', 'e@l.com', 'eman','kaled','1','back end');
+
 INSERT INTO projectType (type_project)
 VALUES
 ('hour'),('total');
 
-INSERT INTO users (user_name,password,email,first_name,last_name,type_role)
-VALUES
- ('emann', '123', 'alshrq.com.sa@gmail.com', 'emanh','kaled','1'),
-   ('ahmed', '123', 'e@lk.com', 'eman','kaled','1'),
-  ('eman', '123', 'e@l.com', 'eman','kaled','1');
+
+
 
   INSERT INTO projects(title,user_id,description,price,time,type_project)
   VALUES
     ('first','1', 'hiiiii ','10',now(),'1'),
+    ('firstffff','1', 'hiiiii ','10',now(),'1'),
   ('first dd','2', 'halllo','10',now(),'1'),
    ('first dd','3', 'how','10',now(),'1')
 

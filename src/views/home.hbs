@@ -10,61 +10,12 @@
             <button class="btn dark--red ">سجل حساب</button>
           </a>
         </div>
+    
   </header>
 
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="flex-container">
-    <div class="a">
-     <h2>Welcome back</h2>
-
-      <label class="labelS">Your UserName or Email</label><br>
-      <input type="text" id="name" name="username" class="inputS" id="name" ><br>
-      <label class="labelS">Your Password</label><br>
-      <input type="text" id="password" name="password" class="inputS" id="password"><br>
-      <button class="buttonS">Sign in</button>
-
-         <div class="msg"></div>
-    </div>
-  <div class="a">
-       <form method="post" action="/signup">
-  <div>
-    <label>firstName</label>
-    <input type="text" name="firstName" placeholder="firstName"required>
-  </div>
-  <div>
-    <label>lastName</label>
-    <input type="text" name="lastName" placeholder="lastName"required>
-  </div>
-  <div>
-    <label>Username</label>
-    <input type="text" name="username" placeholder="Username"required>
-  </div>
-  <div>
-    <label>Email</label>
-    <input type="email" name="email" placeholder="Email"required>
-  </div>
-  <div>
-    <label>Password</label>
-    <input type="text" name="password" placeholder="Password"required>
-  </div>
-  <div>
-    <label>Confirm Password</label>
-    <input type="text" name="password2" placeholder="Confirm Password"required>
-  </div>
-  <button type="submit">Register</button>
-  <br>
-  Have An Account? <a href="/">Login Now</a>
-</form>
-  </div>
-
-</div>
-  </div>
-</div>
-
  <main>
+ 
         <section class="projects">
             <h2 class="text--right"> مئات المشاريع متاحة لك </h2>
             <div class="projects--header">
@@ -72,11 +23,15 @@
                 <button class="btn lithg--blue pull--right">
                     <i class="fas fa-plus-circle"></i>أنشىء مشروع</button>
             </div>
+           
             {{#each result}}
             <div class="project">
                 <span class="pull--right">
-                    <img src="img/me.jpg" alt="">
+                    <a href="profile/{{this.user_id }}">
+                    <img src="img/me.jpg" alt="profile-img">
+                    </a>
                 </span>
+             
                 <span class="pull--right">{{this.title}}</span>
                 <span class="pull--right">{{this.user_name}}</span>
                 <span class="pull--right">{{this.time}}</span>
