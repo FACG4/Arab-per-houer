@@ -24,6 +24,7 @@ router.post('/insertproject', insertProject.post);
 
 
 router.get('/project/:id', checkuser, project.get);
+router.post('/project/:id', checkuser, project.post);
 
 router.get('/profile/:id', checkuser, profile.get);
 

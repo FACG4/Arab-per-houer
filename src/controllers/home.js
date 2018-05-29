@@ -13,7 +13,6 @@ exports.get = (req, res) => {
 };
 exports.post = (req, res) => {
   const word = req.body.name;
-  console.log(word);
 
   search(word, (err, r) => {
     if (err) throw new Error(err);
