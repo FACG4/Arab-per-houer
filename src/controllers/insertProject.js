@@ -3,7 +3,7 @@
 const insertQuery = require('../database/queries/insertProject');
 
 exports.get = (req, res) => {
-  res.render('insertProject');
+  res.render('insertProject', { style: 'css/style.css' });
 };
 exports.post = (req, res) => {
   if (req.body) {

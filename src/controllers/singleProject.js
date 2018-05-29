@@ -8,22 +8,19 @@ exports.get = (req, res) => {
   selectProject(id, (err, result) => {
     if (err) console.log(err);
     else {
-      res.render('singleProject', { result: result.rows[0] });
+      res.render('singleProject', { result: result.rows[0], style: '../css/style.css' });
     }
   });
 };
 
 exports.post = (req, res) => {
-  console.log(req.headers.host);
   const { id } = req.params;
   selectClient(id, (err, result) => {
     console.log('results.rows', result.rows[0].email);
     if (err) console.log(err);
     else {
       const projectUrl = `${req.headers.host}${req.originalUrl}`;
-      console.log('req.url', req.url);
-      console.log('req.headers.host', req.headers.host);
-      console.log(projectUrl);
+
       const output = `
         <p>You Have new offer</p>
         <h1>Offer Details</h1>

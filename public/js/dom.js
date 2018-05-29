@@ -28,20 +28,46 @@ const select = function (selector) {
 
 
 const btnn = select('.buttonS');
-btnn.addEventListener('click', () => {
-  const name = select('#name').value;
-  const password = select('#password').value;
-  const msg = select('.msg');
-  console.log(name);
-  console.log(password);
-  fetch('/login', 'POST', name, password, (res) => {
-    msg.textContent = res;
+console.log(btnn);
+if (btnn) {
+  btnn.addEventListener('click', () => {
+    const name = select('#name').value;
+    const password = select('#password').value;
+    const msg = select('.msg');
 
-    if (res === 'success') {
-      window.location.pathname = '/';
-    }
+    fetch('/login', 'POST', name, password, (res) => {
+      msg.textContent = res;
+
+      if (res === 'success') {
+        window.location.pathname = '/';
+      }
+    });
   });
-});
+}
 
-console.log('ggggggggggggggggggggggggggggggg');
+const buttons = document.querySelectorAll('.x');
+if (buttons) {
+  console.log(buttons);
+  buttons.forEach((e) => {
+    e.addEventListener('click', () => {
+      const id = e.id;
+      const password = 'fff';
+      fetch('/user', 'POST', id, password, (res) => {
+        console.log('ddddddddddd');
+      });
+    });
+  });
+}
+const searchbtn = select('#btnSearch');
+console.log('qqqqqq', searchbtn);
+if (searchbtn) {
+  searchbtn.addEventListener('click', () => {
+    const s = select('#search').value;
+    console.log('s', s);
+    const d = 'f';
+    fetch('/', 'POST', s, d, (res) => {
+      console.log('ox');
+    });
+  });
+}
 

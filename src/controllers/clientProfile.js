@@ -11,6 +11,7 @@ exports.get = (req, res) => {
         info: info.rows,
         details: info.rows[0],
         projectCount: info.rows.length,
+        style: '../css/style.css',
       });
     }
   });

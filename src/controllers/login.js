@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const secret = process.env.SECRET;
 
 exports.get = (req, res) => {
-  res.render('login');
+  res.render('login', { style: 'css/style.css' });
 };
 
 exports.post = (req, res) => {
