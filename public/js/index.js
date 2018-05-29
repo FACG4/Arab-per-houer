@@ -1,6 +1,6 @@
 
-function fetch(url,method ,name, pass, callback){
-  var xhr = new XMLHttpRequest();
+function fetch (url, method, name, pass, callback) {
+const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function(){
   if(xhr.readyState === 4 && xhr.status === 200){
     var response = xhr.responseText;
@@ -14,15 +14,4 @@ xhr.setRequestHeader('content-type', 'application/json')
 xhr.send(data);
 }
 
-function fetch2(url,method , callback){
-  var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function(){
-  if(xhr.readyState === 4 && xhr.status === 200){
-    var response = xhr.responseText;
-    callback(response);
-  }
-}
 
-xhr.open(method, url);
-xhr.send();
-}
