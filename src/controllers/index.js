@@ -9,6 +9,7 @@ const project = require('./singleProject');
 const checkuser = require('./checkUser');
 const profile = require('./clientProfile');
 const adminUser = require('./adminuser');
+const success = require('./success');
 
 router.get('/', home.get);
 router.post('/', home.post);
@@ -19,8 +20,10 @@ router.post('/signup', signup.post);
 router.get('/login', login.get);
 router.post('/login', login.post);
 
+router.get('/success', success.get);
+
 router.get('/insertproject', checkuser, insertProject.get);
-router.post('/insertproject', insertProject.post);
+router.post('/insertproject', checkuser, insertProject.post);
 
 
 router.get('/project/:id', checkuser, project.get);

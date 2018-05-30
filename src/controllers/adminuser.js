@@ -20,15 +20,3 @@ exports.post = (req, res) => {
   });
 };
 
-
-// DELETE FROM users WHERE id=1;
-
-// DELETE FROM users USING projects WHERE users.id = projects.user_id
-
-// 1
-// 2
-// DELETE FROM users WHERE users.id = (SELECT user_id FROM projects);
-
-// DELETE FROM users USING projects WHERE users.id = projects.user_id
-
-// SELECT  title  FROM projects WHERE title LIKE '%d%';
