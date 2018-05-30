@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
         res.render('error');
         next();
       }
-      console.log('lol', decoded);
+
 
       req.userName = decoded.userName;
       req.userId = decoded.userId;

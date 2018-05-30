@@ -1,9 +1,8 @@
-
 const insertQuery = require('../database/queries/insertProject');
 const error = require('./error');
 
 exports.get = (req, res) => {
-  res.render('insertProject', { style: { style1: 'css/style.css', project: 'css/project.css' }, id: req.userId, log: req.cookies.user });
+  res.render('insertProject', { style: { style1: 'css/style.css', project: 'css/project.css', insertProject: 'css/insertProject.css'}, id: req.userId, log: req.cookies.user });
 };
 exports.post = (req, res) => {
   if (req.body) {

@@ -14,6 +14,7 @@ const adminDashboard = require('./adminDashboard');
 const logout = require('./logout');
 const checkadmin = require('./checkadmin');
 const err = require('./error');
+const homeProject = require('./homeProject.js');
 
 router.get('/404', err.catchError);
 router.get('/', home.get);
@@ -47,5 +48,8 @@ router.post('/admin/projects', checkuser, projectsAdmin.post);
 
 router.get('/admin/users', adminUser.get);
 router.post('/admin/users', adminUser.post);
+
+router.get('/homeProject', homeProject.get);
+router.post('/homeProject', homeProject.post);
 
 module.exports = router;

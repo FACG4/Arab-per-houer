@@ -1,12 +1,13 @@
 const nodemailer = require('nodemailer');
 const selectProject = require('./../database/queries/selectProject');
 const selectClient = require('./../database/queries/selectClient');
+const error = require('./error');
 
 exports.get = (req, res) => {
   const { id } = req.params;
 
   selectProject(id, (err, result) => {
-    if (err) console.log(err);
+    if (err) error.catchError(req, res);
     else {
       res.render('singleProject', { result: result.rows[0], style: { style1: '../css/style.css', project: '../css/project.css' }, log: req.cookies.user });
     }
@@ -16,7 +17,7 @@ exports.get = (req, res) => {
 exports.post = (req, res) => {
   const { id } = req.params;
   selectClient(id, (err, result) => {
-    if (err) console.log(err);
+    if (err) error.catchError(req, res);
     else {
       const projectUrl = `${req.headers.host}${req.originalUrl}`;
 
@@ -48,10 +49,8 @@ exports.post = (req, res) => {
         html: output,
       };
 
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) error.catchError(req, res);
         res.render('singleProject', {
           style: { style1: '../css/style.css', project: '../css/project.css' },
           msg: 'شكراً لك على التواصل معنا .. سنرد عليك في أبعد فرصة',
