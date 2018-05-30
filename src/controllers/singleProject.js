@@ -8,7 +8,7 @@ exports.get = (req, res) => {
   selectProject(id, (err, result) => {
     if (err) console.log(err);
     else {
-      res.render('singleProject', { result: result.rows[0], style: '../css/style.css' });
+      res.render('singleProject', { result: result.rows[0], style: { style1: '../css/style.css', project: '../css/project.css' } , log: req.cookies.user });
     }
   });
 };

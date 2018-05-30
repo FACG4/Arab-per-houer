@@ -6,11 +6,13 @@
 
 </head>
 <body>
-  {{#if log}}
+  <nav>
+{{#if log}}
 {{>nav}}
 {{else}}
 {{>header}}
 {{/if}}
+</nav>
   <main>
     {{{body}}}
   </main>

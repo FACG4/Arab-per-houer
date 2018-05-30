@@ -26,7 +26,7 @@ type_project VARCHAR(50) NOT NULL
 CREATE TABLE projects(
 id SERIAL PRIMARY KEY,
 title VARCHAR(50) NOT NULL,
-user_id INT NOT NULL REFERENCES users(id) on delete CASCADE,
+user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
 description VARCHAR(100) NOT NULL,
 price VARCHAR(50) NOT NULL,
 time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -45,11 +45,6 @@ INSERT INTO roles (type_role)VALUES
 ('cleint'),
 ('freelance');
 
-INSERT INTO users (user_name,password,email,first_name,last_name,type_role,position)
-VALUES
-('emann', '123', 'e@lll.com', 'emanh','kaled','1','front end devloper'),
-('ahmed', '123', 'e@lk.com', 'eman','kaled','1','react'),
-('eman', '123', 'e@l.com', 'eman','kaled','1','back end');
 
 INSERT INTO projectType (type_project)
 VALUES
@@ -58,11 +53,3 @@ VALUES
 
 
 
-  INSERT INTO projects(title,user_id,description,price,time,type_project)
-  VALUES
-    ('first','1', 'hiiiii ','10',now(),'1'),
-    ('firstffff','1', 'hiiiii ','10',now(),'1'),
-  ('first dd','2', 'halllo','10',now(),'1'),
-   ('first dd','3', 'how','10',now(),'1')
-
- ;

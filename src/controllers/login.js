@@ -5,13 +5,13 @@ const bcrypt = require('bcrypt');
 const secret = process.env.SECRET;
 
 exports.get = (req, res) => {
-  res.render('login', { style: 'css/style.css' });
+  res.render('login', { style: { style1: 'css/style.css' } });
 };
 
 exports.post = (req, res) => {
   const name = req.body.x;
   const pass = req.body.y;
-  console.log(name);
+  console.log('fffffff', name);
 
   getUser(name, (err, data) => {
     if (data.length === 0) {
@@ -26,7 +26,7 @@ exports.post = (req, res) => {
         } else {
           const userDetails = { userId: data[0].id, userName: data[0].user_name };
           const token = sign(userDetails, secret);
-          res.cookie('user', token, { maxAge: 900000, httpOnly: true });
+          res.cookie('user', token, { maxAge: 900000000000000, httpOnly: true });
           res.send('success');
         }
       });

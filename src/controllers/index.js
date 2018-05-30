@@ -28,8 +28,9 @@ router.post('/signup', signup.post);
 router.get('/login', login.get);
 router.post('/login', login.post);
 
+
 router.get('/insertproject', checkuser, insertProject.get);
-router.post('/insertproject', insertProject.post);
+router.post('/insertproject', checkuser, insertProject.post);
 
 
 router.get('/project/:id', checkuser, project.get);
