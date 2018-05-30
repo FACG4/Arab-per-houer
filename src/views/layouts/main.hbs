@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
 {{>head}}
 
 </head>
 <body>
   {{#if log}}
-{{>header}}
-{{else}}
 {{>nav}}
+{{else}}
+{{>header}}
 {{/if}}
   <main>
     {{{body}}}

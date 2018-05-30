@@ -1,39 +1,6 @@
 const select = function (selector) {
   return document.querySelector(selector);
 };
-// if (select('#menu')) {
-//   select('#menu').addEventListener('click', () => {
-//     select('.menu').classList.toggle('hidden');
-//   });
-
-//   select('.menu--close').addEventListener('click', () => {
-//     select('.menu').classList.toggle('hidden');
-//   });
-
-//   select('#user--top-down').addEventListener('click', () => {
-//     select('.user--top-menu').classList.toggle('hidden');
-//   });
-
-//   select('.user--top-close').addEventListener('click', () => {
-//     select('.user--top-menu').classList.toggle('hidden');
-//   });
-
-//   select('.btn--bid').addEventListener('click', () => {
-//     select('.project--details-pop').classList.toggle('hidden');
-//   });
-
-//   select('#close-btn-project').addEventListener('click', () => {
-//     select('.project--details-pop').classList.toggle('hidden');
-//   });
-
-
-//   select('#sign-pop').addEventListener('click', () => {
-//     select('.model--pop-sign').classList.toggle('hidden');
-//   });
-//   select('#close-sign-pop').addEventListener('click', () => {
-//     select('.model--pop-sign').classList.toggle('hidden');
-//   });
-// }
 
 
 const btnn = select('.buttonS');
@@ -42,6 +9,7 @@ if (btnn) {
     const name = select('#name').value;
     const password = select('#password').value;
     const msg = select('.msg');
+
     fetch('/login', 'POST', name, password, (res) => {
       msg.textContent = res;
       if (res === 'success') {
@@ -56,8 +24,14 @@ if (buttons) {
   buttons.forEach((e) => {
     e.addEventListener('click', () => {
       const id = e.id;
-      const password = 'fff';
-      fetch('/user', 'POST', id, password, (res) => {
+
+      const tableName = 'users';
+      fetch('/admin/users', 'POST', id, tableName, (err, res) => {
+if (err) {
+  console.log(err);
+} else {
+          console.log(res);
+}
 
       });
     });
@@ -73,3 +47,16 @@ if (searchbtn) {
   });
 }
 
+
+const deleteProject = document.querySelectorAll('.deleteProject');
+console.log(deleteProject);
+if (deleteProject) {
+  deleteProject.forEach((btn) => {
+    btn.addEventListener('click', ()=> {
+
+fetch('/admin/projects', 'POST', btn.id, '', (res) => {
+        console.log('res',res);
+  });
+    });
+  });
+}

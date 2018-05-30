@@ -1,0 +1,9 @@
+<ul>
+{{#each result}}
+    <li>
+      <label class="chbx" name="list">   {{this.id}}  
+{{this.title}}</label>
+  </li>
+  <button class="deleteProject" id="{{this.id}}">Delete</button>
+ {{/each}}
+</ul>

@@ -8,6 +8,7 @@ const insertProject = (title, userId, description, price, type_project, cb) => {
   };
 
   db.query(sql, (err, result) => {
+    console.log(err);
     if (err) return cb(err);
     return cb(null, result);
   });

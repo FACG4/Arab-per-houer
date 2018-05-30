@@ -9,8 +9,8 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  const { name } = req.body;
-  const { pass } = req.body;
+  const name = req.body.x;
+  const pass = req.body.y;
   console.log(name);
 
   getUser(name, (err, data) => {
