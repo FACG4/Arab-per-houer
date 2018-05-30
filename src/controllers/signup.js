@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const signupInsert = require('./../database/queries/insert_user');
 
 exports.get = (req, res) => {
-  res.render('signup', { style: { style1: 'css/style.css' } });
+  res.render('signup', { style: { style1: 'css/style.css', signup: 'css/login.css' } });
 };
 exports.post = (req, res) => {
   const {
@@ -19,4 +19,3 @@ exports.post = (req, res) => {
     }
   });
 };
-

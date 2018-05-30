@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const secret = process.env.SECRET;
 
 exports.get = (req, res) => {
-  res.render('login', { style: { style1: 'css/style.css' } });
+  res.render('login', { style: { style1: 'css/style.css', loginStyle: 'css/login.css' } });
 };
 
 exports.post = (req, res) => {
@@ -22,7 +22,7 @@ exports.post = (req, res) => {
           console.log('error');
         }
         if (!response) {
-          res.send('invalid password or user name');
+          res.send('هناك خطأ في اليوز أو كلمة السر .. حاول مرة أخرى');
         } else {
           const userDetails = { userId: data[0].id, userName: data[0].user_name };
           const token = sign(userDetails, secret);

@@ -15,4 +15,3 @@ const insertProject = (title, userId, description, price, type_project, cb) => {
 };
 
 module.exports = insertProject;
-
