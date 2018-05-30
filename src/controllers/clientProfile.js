@@ -12,6 +12,7 @@ exports.get = (req, res) => {
         details: info.rows[0],
         projectCount: info.rows.length,
         style: { style1: '../css/style.css', project: '../css/project.css', profile: '../css/profile.css' },
+        log: req.cookies.user,
       });
     }
   });

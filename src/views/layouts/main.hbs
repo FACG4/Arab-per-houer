@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
 {{>head}}
 
 </head>
 <body>
-  {{#if log}}
-{{>header}}
-{{else}}
+  <nav>
+{{#if log}}
 {{>nav}}
+{{else}}
+{{>header}}
 {{/if}}
+</nav>
   <main>
     {{{body}}}
   </main>

@@ -1,5 +1,5 @@
 
-function fetch (url, method, name, pass, callback) {
+function fetch (url, method, x, y, callback) {
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function(){
   if(xhr.readyState === 4 && xhr.status === 200){
@@ -8,10 +8,8 @@ xhr.onreadystatechange = function(){
   }
 }
 
-var data= JSON.stringify({name,pass})
+var data= JSON.stringify({x,y})
 xhr.open(method, url);
 xhr.setRequestHeader('content-type', 'application/json')
 xhr.send(data);
 }
-
-
