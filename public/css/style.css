@@ -5,6 +5,15 @@ margin: 0;
 padding: 0;
 }
 
+.clear:before,
+.clear:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clear:after {
+    clear: both;
+}
 .full {
   width: 100% !important;
 }
@@ -41,9 +50,7 @@ float: left;
   text-align: right;
   display: block;
 }
-.clear {
-clear: both;
-}
+
 
 .btn {
 display: block;
