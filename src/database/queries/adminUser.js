@@ -13,7 +13,7 @@ const selectUser = (cb) => {
 };
 
 
-const deleteProj = (id, cb) => {
+const deleteUser = (id, cb) => {
   const sql = {
     text: 'DELETE FROM users WHERE id=$1 ',
     values: [id],
@@ -27,5 +27,18 @@ const deleteProj = (id, cb) => {
   });
 };
 
+const deleteProject = (id, cb) => {
+  const sql = {
+    text: 'DELETE FROM projects WHERE id=$1 ',
+    values: [id],
+  };
 
-module.exports = { selectUser, deleteProj };
+  db_connection.query(sql, (err, res) => {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, res);
+  });
+};
+
+module.exports = { selectUser, deleteUser, deleteProject };

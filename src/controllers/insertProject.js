@@ -1,5 +1,4 @@
 
-
 const insertQuery = require('../database/queries/insertProject');
 
 exports.get = (req, res) => {
