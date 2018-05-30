@@ -11,6 +11,8 @@ exports.post = (req, res) => {
 
 
   bcrypt.hash(password, 10, (err, hash) => {
+    console.log('f', hash);
+
     if (err) throw new Error(err, 'hashing password signup');
     else {
       signupInsert(username, hash, email, firstName, lastName, type, position, (error, result) => {

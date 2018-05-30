@@ -8,7 +8,7 @@ exports.get = (req, res) => {
   selectProject(id, (err, result) => {
     if (err) console.log(err);
     else {
-      res.render('singleProject', { result: result.rows[0], style: { style1: '../css/style.css', project: '../css/project.css' } , log: req.cookies.user });
+      res.render('singleProject', { result: result.rows[0], style: { style1: '../css/style.css', project: '../css/project.css' }, log: req.cookies.user });
     }
   });
 };
@@ -53,6 +53,7 @@ exports.post = (req, res) => {
           return console.log(error);
         }
         res.render('singleProject', {
+          style: { style1: '../css/style.css', project: '../css/project.css' },
           msg: 'شكراً لك على التواصل معنا .. سنرد عليك في أبعد فرصة',
         });
       });

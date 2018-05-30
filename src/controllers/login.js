@@ -11,7 +11,7 @@ exports.get = (req, res) => {
 exports.post = (req, res) => {
   const name = req.body.x;
   const pass = req.body.y;
-  console.log('fffffff', name);
+
 
   getUser(name, (err, data) => {
     if (data.length === 0) {
@@ -24,7 +24,8 @@ exports.post = (req, res) => {
         if (!response) {
           res.send('invalid password or user name');
         } else {
-          const userDetails = { userId: data[0].id, userName: data[0].user_name };
+          const userDetails = { userId: data[0].id, userName: data[0].user_name, role: data[0].type_role };
+
           const token = sign(userDetails, secret);
           res.cookie('user', token, { maxAge: 900000000000000, httpOnly: true });
           res.send('success');
