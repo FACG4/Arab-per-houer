@@ -2,9 +2,8 @@ const db = require('./../db_connect');
 
 const search = (word, cb) => {
   const sql = {
-    text:
-      "SELECT  title  FROM projects WHERE title LIKE '% ' + $1 + '%'",
-    values: [word],
+    text: 'SELECT  title  FROM projects WHERE title LIKE $1',
+    values: [`%${word}%`],
 
   };
 

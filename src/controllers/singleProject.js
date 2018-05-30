@@ -16,7 +16,6 @@ exports.get = (req, res) => {
 exports.post = (req, res) => {
   const { id } = req.params;
   selectClient(id, (err, result) => {
-    console.log('results.rows', result.rows[0].email);
     if (err) console.log(err);
     else {
       const projectUrl = `${req.headers.host}${req.originalUrl}`;
