@@ -18,22 +18,7 @@ if (btnn) {
   });
 }
 
-const buttons = document.querySelectorAll('.x');
-if (buttons) {
-  buttons.forEach((e) => {
-    e.addEventListener('click', () => {
-      const id = e.id;
-      const tableName = 'users';
-      fetch('/admin/users', 'POST', id, tableName, (err, res) => {
-        if (err) {
-          console.log(err);
-        } else {
-          location.reload();
-        }
-      });
-    });
-  });
-}
+
 const searchbtn = select('#btnSearch');
 if (searchbtn) {
   searchbtn.addEventListener('click', () => {
@@ -47,14 +32,26 @@ if (searchbtn) {
 
 
 const deleteProject = document.querySelectorAll('.deleteProject');
-console.log(deleteProject);
+
 if (deleteProject) {
   deleteProject.forEach((btn) => {
     btn.addEventListener('click', () => {
       fetch('/admin/projects', 'POST', btn.id, '', (res) => {
-        console.log('res', res);
+        location.reload();
       });
     });
   });
 }
+const buttons = document.querySelectorAll('.x');
 
+console.log('qqq', buttons);
+
+if (buttons) {
+  buttons.forEach((e) => {
+    e.addEventListener('click', () => {
+      fetch('/admin/users', 'POST', e.id, '', (res) => {
+        location.reload();
+      });
+    });
+  });
+}
