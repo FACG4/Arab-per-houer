@@ -46,8 +46,8 @@ router.get('/admin', checkuser, checkadmin, adminDashboard.get);
 router.get('/admin/projects', checkuser, projectsAdmin.get);
 router.post('/admin/projects', checkuser, projectsAdmin.post);
 
-router.get('/admin/users', adminUser.get);
-router.post('/admin/users', adminUser.post);
+router.get('/admin/users', checkuser, checkadmin, adminUser.get);
+router.post('/admin/users', checkuser, checkadmin, adminUser.post);
 
 router.get('/homeProject', homeProject.get);
 router.post('/homeProject', homeProject.post);
