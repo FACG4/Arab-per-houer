@@ -1,6 +1,4 @@
 
 exports.get = (req, res) => {
-
-      res.render('adminDashboard');
-
+  res.render('adminDashboard', { style: { style: 'css/style.css' } });
 };
