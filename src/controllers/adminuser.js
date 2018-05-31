@@ -13,7 +13,7 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const id = req.body.x;
-  adminUser.deleteRow(id, (err, result) => {
+  adminUser.deleteUser(id, (err, result) => {
     if (err) error.catchError(req, res);
     else {
       res.render('adminUser', { style: { style: '../css/style.css' } });
