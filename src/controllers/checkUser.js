@@ -1,10 +1,9 @@
 
 const jwt = require('jsonwebtoken');
-// const cookie = require('cookie');
+
 require('env2')('./config.env');
 
 const secret = process.env.SECRET;
-console.log('first');
 
 
 module.exports = (req, res, next) => {
@@ -15,8 +14,11 @@ module.exports = (req, res, next) => {
         res.render('error');
         next();
       }
+
+
       req.userName = decoded.userName;
       req.userId = decoded.userId;
+      req.role = decoded.role;
       next();
     });
   } else {

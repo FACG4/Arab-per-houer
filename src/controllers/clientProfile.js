@@ -1,11 +1,12 @@
 const selectInfo = require('./../database/queries/selectInfo');
+const error = require('./error');
 
 exports.get = (req, res) => {
   const { id } = req.params;
 
 
   selectInfo(id, (err, info) => {
-    if (err) throw new Error(err);
+    if (err) error.catchError(req, res);
     else {
       res.render('clientProfile', {
         info: info.rows,
